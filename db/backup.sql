@@ -85,7 +85,30 @@ CREATE TABLE `Course` (
 LOCK TABLES `Course` WRITE;
 /*!40000 ALTER TABLE `Course` DISABLE KEYS */;
 INSERT INTO `Course` VALUES (1,'Matematica'),
-                           (2,'Italiano'),
-                           (3,'Donati');
+                            (2,'Italiano'),
+                            (3,'Donati');
 UNLOCK TABLES;
+
+
+DROP TABLE IF EXISTS `Classe`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Classe` (
+  `Id_student` INT NOT NULL,
+  `Id_course` INT NOT NULL,
+  PRIMARY KEY (`Id_student`,`Id_course`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Classe`
+--
+
+LOCK TABLES `Classe` WRITE;
+/*!40000 ALTER TABLE `Classe` DISABLE KEYS */;
+INSERT INTO `Classe` VALUES (1,1),(1,2),(1,3),
+                            (2,1),(2,2);
+UNLOCK TABLES;
+
+
 

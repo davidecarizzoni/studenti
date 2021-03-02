@@ -28,10 +28,9 @@ app.get('/getTable',get.getTable);
 app.get('/getSingolo', (req, res) => {
 
   let table = req.query.table;
+  let id = req.query.id;
 
-  let codice = req.query.codice;
-
-  pool.query("select * from "+table+" WHERE codice ='"+codice+"'", (err, results) => {
+  pool.query("select * from "+table+" WHERE id ='"+id+"'", (err, results) => {
     if (err) {
       return res.send(err);
     } else {
@@ -39,6 +38,29 @@ app.get('/getSingolo', (req, res) => {
     }
   });
 });
+
+app.get('/getStudent', (req, res) => {
+
+  pool.query("select * from Student", (err, results) => {
+    if (err) {
+      return res.send(err);
+    } else {
+      return res.send(results);
+    }
+  });
+});
+
+app.get('/getCourse', (req, res) => {
+
+  pool.query("select * from Course", (err, results) => {
+    if (err) {
+      return res.send(err);
+    } else {
+      return res.send(results);
+    }
+  });
+});
+
 
 app.post('/insert', (req, res) => {
 

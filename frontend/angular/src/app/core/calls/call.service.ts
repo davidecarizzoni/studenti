@@ -11,6 +11,12 @@ export class CallService {
   getTable(tname:string){
     return this.http.getCall("/getTable?table="+tname);
   }
+  getStudent(){
+    return this.http.getCall("/getStudent");
+  }
+  getCourse(){
+    return this.http.getCall("/getCourse");
+  }
   insertCall(body:any,table:string){
     return this.http.postCall("/insert?table="+table,body);
   }
@@ -20,5 +26,7 @@ export class CallService {
   getSingolo(table:string,codice:string){
     return this.http.getCall("/getSingolo?table="+table+"&codice="+codice);
   }
+
+
 
 }
