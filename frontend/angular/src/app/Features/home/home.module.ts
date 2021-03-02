@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 
 
 
@@ -11,8 +11,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
   declarations: [HomeComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule,
-    MDBBootstrapModule.forRoot()
+    HomeRoutingModule
   ]
 })
 export class HomeModule { }
