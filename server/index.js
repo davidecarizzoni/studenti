@@ -111,7 +111,7 @@ app.post('/insert', (req, res) => {
 
   valori= valori.slice(0, -1);
  
-  pool.query("INSERT INTO "+table+" VALUES (NULL,"+valori+")", (err, results) => {
+  pool.query("INSERT INTO "+table+" VALUES ("+valori+")", (err, results) => {
     if (err) {
       return res.send(err);
     } else {
