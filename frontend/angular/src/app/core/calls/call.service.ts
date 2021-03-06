@@ -17,6 +17,11 @@ export class CallService {
   getCourse(){
     return this.http.getCall("/getCourse");
   }
+  getCorsiStudent(param:string){
+    return this.http.getCall("/ getCorsiStudent?param="+param);
+  }
+
+
   insertCall(body:any,table:string){
     return this.http.postCall("/insert?table="+table,body);
   }
@@ -26,6 +31,7 @@ export class CallService {
   getSingolo(table:string,codice:string){
     return this.http.getCall("/getSingolo?table="+table+"&codice="+codice);
   }
+
 
 
 
